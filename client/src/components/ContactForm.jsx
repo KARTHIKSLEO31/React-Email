@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
-function ContactForm() {
+const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -38,3 +37,4 @@ function ContactForm() {
     </form>
   );
 }
+export default ContactForm;

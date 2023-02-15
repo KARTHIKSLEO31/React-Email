@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ContactForm from './components/ContactForm';
 import './App.css'
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Vite + React</h1>
+      <ContactForm />
     </div>
   )
 }
