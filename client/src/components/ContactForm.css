@@ -1,0 +1,53 @@
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgba(218,165,32);
+    box-shadow: 0px 0px 10px 10px rgba(100, 99, 99, 0.5);
+    border-radius: 2px;
+}
+
+.form-label {
+    padding: 2rem;
+}
+
+.form-input {
+    margin-left: 0.5rem;
+    border-radius: 3px;
+    background-color: rgba(218,165,32);
+    border: none;
+}
+
+.form-message {
+    display: flex;
+    flex-direction: row;
+}
+
+.message-label {
+    padding: 0.1rem 0.5rem 2rem 0.5rem;
+
+}
+
+.message-input {
+    border-radius: 3px;
+    background-color: rgba(218,165,32);
+    border: none;
+}
+
+.form-button {
+    margin: 1rem;
+    border-radius: 3px;
+    background-color: rgb(165, 162, 153);
+    border: none;
+    padding: 0.5rem;
+}
+
+.form-button:hover {
+    background-color: rgb(250, 121, 46);
+}
+
+.form-button:active {
+    background-color: rgb(238, 221, 169);
+}
+
