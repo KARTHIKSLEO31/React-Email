@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
+dotenv.config();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -10,26 +11,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post('/sendEmail', (req, res) => {
-  const { name, email, message } = req.body;
+app.post('/send_email', (req, res) => {
+  const { email,subject, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'YOUR_EMAIL_ADDRESS',
-      pass: 'YOUR_EMAIL_PASSWORD',
+      user: process.env.YOUR_EMAIL_ADDRESS,
+      pass: process.env.YOUR_EMAIL_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: 'YOUR_EMAIL_ADDRESS',
-    to: 'RECIPIENT_EMAIL_ADDRESS',
-    subject: 'New Message from Contact Form',
-    html: `
-      <p>Name: ${name}</p>
-      <p>Email: ${email}</p>
-      <p>Message: ${message}</p>
-    `,
+    from: process.env.YOUR_EMAIL_ADDRESS,
+    to: email,
+    subject: subject,
+    text: message,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
